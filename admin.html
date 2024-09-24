@@ -7,7 +7,7 @@
     <div id="data-display"></div>
     <script>
       // Fetch data from your Flask API
-      fetch('https://baa5-131-204-254-103.ngrok-free.app:5000/data')  // Use ngrok URL or your forwarded IP
+      fetch('192.168.1.32:5000/data')   // Use ngrok URL or your forwarded IP
         .then(response => response.json())
         .then(data => {
           let display = document.getElementById('data-display');
