@@ -1,5 +1,21 @@
 <html>
   <body>
-    <h1>test admin wp for nikto</h1>
+    <h1>surely no one will find this page</h1>
+    <a href="https://davidf.fun" class="button">Main Page</a>.
+    <h2>Enter here:</h2>
+    <input>
+    <div id="data-display"></div>
+    <script>
+      // Fetch data from your Flask API
+      fetch('https://baa5-131-204-254-103.ngrok-free.app')  // Use ngrok URL or your forwarded IP
+        .then(response => response.json())
+        .then(data => {
+          let display = document.getElementById('data-display');
+          display.innerHTML = JSON.stringify(data, null, 2);  // Display JSON data
+        })
+        .catch(error => {
+          console.error('Error fetching data:', error);
+        });
+    </script>
   </body>
 </html>
