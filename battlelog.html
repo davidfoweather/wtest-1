@@ -4,11 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Battlelog</title>
+    <script> src="battlelog.js"</script>
+    <link rel="stylesheet" href="battlelog_style.css">
 </head>
 <body>
+    <nav class="navbar">
+        <div class="logo">
+          <a href="/">
+              <img src="davidflogo_small.png" alt="Logo" class="logo-image">
+          </a>
+        </div>
+        <h1>David F's Brawl Stars Stats</h1>
+        <ul class="nav-links">
+            <li><a href="/stats">Overview</a></li>
+            <li><a href="/battlelog">Battle Log</a></li>
+            <li><a href="#placeholder">Placeholder</a></li>
+        </ul>
+    </nav>
     <h1>Battlelog</h1>
-    <div id="battlelog-container">
-        <!-- Content for the battlelog page -->
+    <div class="container">
+        {% for game in games %}
+        <div class="card">
+            <h3>Mode: {{ game.mode }}</h3>
+            <p>Result: <span class="result {{ game.result|lower }}">{{ game.result }}</span></p>
+            <p>Duration: {{ game.duration }}</p>
+            <p>Star Player: {{ game.star_player }}</p>
+        </div>
+        {% endfor %}
     </div>
     <button onclick="window.location.href='/stats'">Back to Stats</button>
 </body>

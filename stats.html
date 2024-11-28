@@ -3,28 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Win/Loss Chart</title>
+    <title>david f's stats</title>
+    <link rel="icon" type="image/x-icon" href="/davidflogo.png">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="chart.js"></script>
+    <link rel="stylesheet" href="stats_style.css">
     
 </head>
 
 
 <body>
-  <button onclick="window.location.href='/stats/battlelog'">View Battlelog</button>
-  <div id="filter-buttons">
-    <button onclick="updateChart('24h')">Last 24 Hours</button>
-    <button onclick="updateChart('week')">Past Week</button>
-    <button onclick="updateChart('month')">Past Month</button>
-    <button onclick="updateChart('all')">All Time</button>
-  </div>
-  <canvas id="victoryChart"></canvas>
   
-  <h1>Win/Loss Visualization</h1>
-  <canvas id="winLossChart" width="100" height="50"></canvas>
-
-  <canvas id="teammatesChart" width="400" height="200"></canvas>
-  <canvas id="opponentsChart" width="400" height="200"></canvas>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="/">
+          <img src="davidflogo_small.png" alt="Logo" class="logo-image">
+      </a>
+    </div>
+    <h1>David F's Brawl Stars Stats</h1>
+    <ul class="nav-links">
+        <li><a href="/stats">Overview</a></li>
+        <li><a href="/battlelog">Battle Log</a></li>
+        <li><a href="#placeholder">Placeholder</a></li>
+    </ul>
+</nav>
+  <div class="dropdown">
+    <button class="dropbtn">Time period: &#9660;</button>
+    <div class="dropdown-content">
+      <a href="#">Today (last 24h)</a>
+      <a href="#">Past Week</a>
+      <a href="#">Past Month</a>
+      <a href="#">All Time</a>
+    </div>
+  </div>
+  <div class="chartscontainer" style="display: flex;">
+    <canvas class="charts" id="winLossChart" width="200" height="400"></canvas>
+    <div></div>
+    <canvas class="charts" id="teammatesChart" width="800" height="400"></canvas>
+  </div>
+  <canvas class="charts" id="opponentsChart" width="800" height="400"></canvas>
 
 </body>
 

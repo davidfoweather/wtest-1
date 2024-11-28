@@ -1,0 +1,136 @@
+button {
+  background-color: #b80000; /* Modern blue color */
+  color: #ffffff; /* White text */
+  padding: 10px 20px; /* Padding for better size */
+  border: none; /* Remove default borders */
+  border-radius: 15px; /* Fully rounded corners */
+  font-size: 16px; /* Adjust font size */
+  font-weight: bold; /* Slightly bolder text */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  cursor: pointer; /* Pointer cursor for interactivity */
+  transition: all 0.3s ease; /* Smooth transitions */
+  text-align: center;
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15); /* More prominent shadow */
+  transform: translateY(-2px); /* Slight hover lift */
+}
+
+button:active {
+  background-color: #004494; /* Even darker blue for click */
+  transform: translateY(1px); /* Subtle pressed effect */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Smaller shadow */
+}
+
+
+h1 {
+  text-align: center;
+}
+
+body {
+  background-color: #222222;
+}
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Space between logo and links */
+  align-items: center; /* Center vertically */
+  background-color: #870000; /* Dark background color */
+  padding: 10px 20px;
+  color: white;
+  position: sticky; /* Sticks to the top */
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Logo */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fbc02d; /* Golden color */
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none; /* Remove bullet points */
+  display: flex; /* Align links horizontally */
+  gap: 20px; /* Add spacing between links */
+}
+
+.nav-links li {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.nav-links a {
+  text-decoration: none; /* Remove underline */
+  color: white; /* White text */
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #fbc02d; /* Golden color on hover */
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: #ecfff8;
+  color: rgb(0, 0, 0);
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.charts {
+  outline: 2px solid #ff1111;
+  outline-offset: 0px;
+  margin: 10px;
+  border-radius: 1rem;
+  padding: 0px;
+  width: 0px;
+}
+
