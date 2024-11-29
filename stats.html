@@ -13,20 +13,19 @@
 
 
 <body>
-  
   <nav class="navbar">
     <div class="logo">
       <a href="/">
-          <img src="davidflogo_small.png" alt="Logo" class="logo-image">
+        <img src="davidflogo_small.png" alt="Logo" class="logo-image">
       </a>
     </div>
     <h1>David F's Brawl Stars Stats</h1>
     <ul class="nav-links">
-        <li><a href="/stats">Overview</a></li>
-        <li><a href="/battlelog">Battle Log</a></li>
-        <li><a href="#placeholder">Placeholder</a></li>
+      <li><a href="/stats">Overview</a></li>
+      <li><a href="/battlelog">Battle Log</a></li>
+      <li><a href="#placeholder">Placeholder</a></li>
     </ul>
-</nav>
+  </nav>
   <div class="dropdown">
     <button class="dropbtn">Time period: &#9660;</button>
     <div class="dropdown-content">
@@ -36,12 +35,14 @@
       <a href="#">All Time</a>
     </div>
   </div>
-  <div class="chartscontainer" style="display: flex;">
-    <canvas class="charts" id="winLossChart" width="200" height="400"></canvas>
-    <div></div>
-    <canvas class="charts" id="teammatesChart" width="800" height="400"></canvas>
+  <div class="lines">
+    <div class="chartscontainer" style="display: flex;">
+      <canvas class="charts" id="winLossChart"></canvas>
+      <canvas class="charts" id="teammatesChart"></canvas>
+    </div>
+    <div>‎</div>
+    <div class="chartscontainer" style="display: flex;">
+      <canvas class="charts" id="opponentsChart"></canvas>
+    </div>
   </div>
-  <canvas class="charts" id="opponentsChart" width="800" height="400"></canvas>
-
 </body>
-

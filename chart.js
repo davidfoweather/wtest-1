@@ -22,9 +22,19 @@ fetch("http://97.80.237.197:5000/battles/winloss")
             },
             options: {
                 responsive: true,
+                maintainAspectRatio: true,
+                aspectRatio: 0.5,
                 plugins: {
                     legend: {
                         display: false
+                    },
+                    title: {
+                        display: true,
+                        text: 'Total Wins/Losses'
+                    },
+                    chartAreaBorder: {
+                        borderColor: 'red',
+                        borderWidth: 200
                     }
                 },
                 scales: {
@@ -60,12 +70,14 @@ function createClusteredBarChart(chartId, chartTitle, data) {
           ]
       },
       options: {
-          responsive: true,
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: 3,
           plugins: {
               title: {
                   display: true,
                   text: chartTitle
-              }
+              },
           },
           scales: {
               x: {
@@ -83,12 +95,12 @@ function createClusteredBarChart(chartId, chartTitle, data) {
 fetch("http://97.80.237.197:5000/battles/teammates")
     .then(response => response.json())
     .then(data => {
-        createClusteredBarChart('teammatesChart', 'Top 20 Teammates Wins/Losses', data);
+        createClusteredBarChart('teammatesChart', 'Most Winning Teammates', data);
     });
 
 // Fetch opponents data
 fetch("http://97.80.237.197:5000/battles/opponents")
     .then(response => response.json())
     .then(data => {
-        createClusteredBarChart('opponentsChart', 'Top 20 Opponents Wins/Losses', data);
+        createClusteredBarChart('opponentsChart', 'Biggest Rivals', data);
     });

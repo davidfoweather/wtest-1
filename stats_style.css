@@ -125,12 +125,20 @@ body {
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
+
 .charts {
-  outline: 2px solid #ff1111;
+  outline: 3px solid #ff1111;
   outline-offset: 0px;
   margin: 10px;
   border-radius: 1rem;
-  padding: 0px;
-  width: 0px;
 }
 
+.chartscontainer {
+  position: relative;
+  height:50vh; 
+  width:100vw
+}
+
+.lines {
+  margin: 10px;
+}
