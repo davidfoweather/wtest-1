@@ -3,35 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Battlelog</title>
+    <title>david f's stats</title>
+    <link rel="icon" type="image/x-icon" href="/davidflogo.png">
     <script> src="battlelog.js"</script>
+    <link rel="stylesheet" href="style_template.css">
     <link rel="stylesheet" href="battlelog_style.css">
+    
 </head>
+
+
 <body>
-    <nav class="navbar">
-        <div class="logo">
-          <a href="/">
-              <img src="davidflogo_small.png" alt="Logo" class="logo-image">
-          </a>
-        </div>
-        <h1>David F's Brawl Stars Stats</h1>
-        <ul class="nav-links">
-            <li><a href="/stats">Overview</a></li>
-            <li><a href="/battlelog">Battle Log</a></li>
-            <li><a href="#placeholder">Placeholder</a></li>
-        </ul>
-    </nav>
-    <h1>Battlelog</h1>
-    <div class="container">
-        {% for game in games %}
-        <div class="card">
-            <h3>Mode: {{ game.mode }}</h3>
-            <p>Result: <span class="result {{ game.result|lower }}">{{ game.result }}</span></p>
-            <p>Duration: {{ game.duration }}</p>
-            <p>Star Player: {{ game.star_player }}</p>
-        </div>
-        {% endfor %}
+  <nav class="navbar">
+    <div class="logo">
+      <a href="/">
+        <img src="davidflogo_small.png" alt="Logo" class="logo-image">
+      </a>
     </div>
-    <button onclick="window.location.href='/stats'">Back to Stats</button>
+    <h1>David F's Brawl Stars Stats</h1>
+    <ul class="nav-links">
+      <li><a href="/stats">Overview</a></li>
+      <li><a href="/battlelog">Battle Log</a></li>
+      <li><a href="#placeholder">Placeholder</a></li>
+    </ul>
+  </nav>
+  <div class="dropdown">
+    <button class="dropbtn">Time period: &#9660;</button>
+    <div class="dropdown-content">
+      <a href="#">Today (last 24h)</a>
+      <a href="#">Past Week</a>
+      <a href="#">Past Month</a>
+      <a href="#">All Time</a>
+    </div>
+  </div>
+  <div id="battle-cards-container" class="battle-cards"></div>
+  <script src="battlelog.js"></script>
+
+
+
 </body>
-</html>
