@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>david f's stats</title>
+    <link rel="icon" type="image/x-icon" href="/davidflogo.png">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="stats_style.css">
+    <style>
+      .map-card {
+          margin: 20px;
+          padding: 20px;
+          border: 2px solid #ff1111;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      .map-title {
+          font-size: 24px;
+          font-weight: bold;
+          margin-bottom: 15px;
+          color: aliceblue;
+      }
+      .brawler-list {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+          gap: 10px;
+          color: aliceblue;
+      }
+      .brawler-item {
+          padding: 5px;
+      }
+      .loading {
+          text-align: center;
+          padding: 20px;
+      }
+      .error {
+          color: red;
+          padding: 20px;
+          text-align: center;
+      }
+  </style>
+    
+</head>
+
+
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="/">
+        <img src="davidflogo_small.png" alt="Logo" class="logo-image">
+      </a>
+    </div>
+    <h1>David F's Brawl Stars Stats</h1>
+    <ul class="nav-links">
+      <li><a href="/stats">Overview</a></li>
+      <li><a href="/battlelog">Battle Log</a></li>
+      <li><a href="/progames2">Pro Picks</a></li>
+    </ul>
+  </nav>
+
+  <div id="container"></div>
+
+    <script>
+        async function fetchBrawlers() {
+            const container = document.getElementById('container');
+            
+            // Show loading state
+            container.innerHTML = '<div class="loading">Loading...</div>';
+            
+            try {
+                const response = await fetch('http://97.80.237.197:5000/progames'); // Replace with your API endpoint
+                if (!response.ok) {
+                    throw new Error('Failed to fetch data');
+                }
+                const data = await response.json();
+                
+                // Clear loading state and display data
+                container.innerHTML = '';
+                
+                // Create a card for each map
+                for (const [mapName, brawlers] of Object.entries(data)) {
+                    const mapCard = document.createElement('div');
+                    mapCard.className = 'map-card';
+                    
+                    mapCard.innerHTML = `
+                        <div class="map-title">${mapName}</div>
+                        <div class="brawler-list">
+                            ${brawlers.map(brawler => `
+                                <div class="brawler-item">
+                                    <span>${brawler.brawler}</span>
+                                    <span>(${brawler.count})</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                    
+                    container.appendChild(mapCard);
+                }
+            } catch (error) {
+                container.innerHTML = `
+                    <div class="error">
+                        Error loading brawler data: ${error.message}
+                    </div>
+                `;
+            }
+        }
+
+        // Load the data when the page loads
+        fetchBrawlers();
+    </script>
+</body>
