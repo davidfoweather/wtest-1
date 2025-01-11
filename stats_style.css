@@ -135,8 +135,14 @@ body {
 
 .chartscontainer {
   position: relative;
-  height:50vh; 
-  width:100vw
+  height: 50vh; 
+  width: 100vw
+}
+
+.chartscontainer2 {
+  position: relative;
+  height: 50vh; 
+  width: 100vw
 }
 
 .lines {
